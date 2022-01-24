@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class baju extends Model
 {
-    protected $fillable = ['kode','nama','harga/kg','jumlah'];
+    protected $fillable = ['kode','nama','berat_kilogram','harga'];
 }

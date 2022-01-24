@@ -17,8 +17,8 @@ class Baju extends Migration
             $table->bigIncrements('id')->nullable();
             $table->string('kode',9)->unique();
             $table->string('nama',50);
-            $table->integer('harga/kg');
-            $table->integer('jumlah');
+            $table->integer('berat_kilogram');
+            $table->integer('harga');
             $table->timestamps();
         });
     }

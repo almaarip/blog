@@ -7,15 +7,15 @@
 <form method="POST" action="{{route('student.store')}}">
     @csrf
   <div class="input-group-text">
-    <label for="staticEmail" class="col-sm-2 col-form-label">NRP</label>
-    <input type="text"  class="form-control-plaintext" name="code" placeholder="Masukan NRP" >
+    <label for="staticEmail" class="col-sm-2 col-form-label">Kode</label>
+    <input type="text"  class="form-control-plaintext" name="kode" placeholder="Masukan KODE" >
   </div>
   <div class="input-group-text">
     <label for="staticEmail" class="col-sm-2 col-form-label">Nama</label>
     <input type="text" class="form-control-plaintext" name="name" placeholder="Masukan Nama" >
   </div>
   <div class="input-group-text">
-    <label for="staticEmail" class="col-sm-2 col-form-label">Jenis Kelamin</label>
+    <label for="staticEmail" class="col-sm-2 col-form-label">Harga/Kg</label>
     <input type="radio" class="form-control-plaintext" name="gender" value="P" >Pria
     <input type="radio" class="form-control-plaintext" name="gender" value="W" >Wanita
   </div>

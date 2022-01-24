@@ -10,7 +10,7 @@
             <tr>
                 <th>Kode</th>
                 <th>Nama</th>
-                <th>Harga/Kg</th>
+                <th>Berat_Kilogram</th>
                 <th>Jumlah</th>
                 <th colspan=2></th>
             </tr>
@@ -21,8 +21,8 @@
                     <td>{{$no++}}</td>
                     <td>{{ $baju->kode }}</td>
                     <td>{{ $baju->nama }}</td>
-                    <td>{{ $baju->harga/kg}}</td>
-                    <td>{{ $baju->jumlah }}</td>
+                    <td>{{ $baju->berat_kilogram}}</td>
+                    <td>{{ $baju->harga }}</td>
                     <td>
                         <a href="{{route ('baju.edit',$baju->id)}}" class="btn btn-primary">Edit</a>
                     </td>
