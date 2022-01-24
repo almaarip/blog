@@ -2,7 +2,7 @@
 
 <?php $no=1 ?>
 @section("content")
-    <h3>Data Mahasiswa</h3>
+    <h3>Data Baju</h3>
         <a href="{{route('baju.create')}}" class="btn btn-success">Tambah Data</a>
         
    <table class="table">

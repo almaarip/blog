@@ -42,7 +42,7 @@ class bajuController extends Controller
     public function store(Request $request)
     {
         Baju::create($request->all());
-        return redirect('auth.baju');
+        return redirect('baju');
     }
 
     /**
@@ -77,7 +77,7 @@ class bajuController extends Controller
     public function update(Request $request, Baju $baju)
     {
         $baju->update($request->all());
-        return redirect('auth.baju');
+        return redirect('baju');
     }
 
     /**
@@ -86,8 +86,10 @@ class bajuController extends Controller
      * @param  \App\Baju  $baju
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Baju $baju)
+    public function destroy($id)
     {
-        //
+        $baju = baju::findOrFail($id);
+        $baju->delete();
+        return redirect('baju');
     }
 }
