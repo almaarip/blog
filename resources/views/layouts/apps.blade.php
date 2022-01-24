@@ -14,9 +14,6 @@
         <li class="nav-item active">
             <a class="nav-link" href="{{route('baju.index')}}">Baju <span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item active">
-            <a class="nav-link" href="{{route('baju.index')}}">Pelanggan <span class="sr-only">(current)</span></a>
-        </li>
         </ul>
     </div>
     </nav>
