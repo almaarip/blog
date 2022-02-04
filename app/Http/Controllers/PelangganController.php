@@ -13,9 +13,9 @@ class PelangganController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        $faculties = Pelanggan::all(); 
-        return view('pelanggan.index');
+    { 
+        $pelanggans=Pelanggan::all();
+        return view('auth.pelanggan.index')->with('pelanggans',$pelanggans);
     }
 
     /**
@@ -25,7 +25,7 @@ class PelangganController extends Controller
      */
     public function create()
     {
-        return view('pelanggan.create');
+        return view('auth.pelanggan.create');
 
     }
 
@@ -63,7 +63,7 @@ class PelangganController extends Controller
     public function edit(pelanggan $pelanggan)
     {
         //
-        return view('pelanggan.edit', compact('pelanggan'));
+        return view('auth.pelanggan.edit', compact('pelanggan'));
     }
 
     /**
