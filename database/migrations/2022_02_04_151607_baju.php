@@ -14,7 +14,7 @@ class Baju extends Migration
     public function up()
     {
         Schema::create('bajus', function (Blueprint $table) {
-            $table->bigIncrements('id')->nullable();
+            $table->bigIncrements('id')->nullable()->unsigned();
             $table->string('nama',50);
             $table->integer('harga');
             $table->timestamps();
