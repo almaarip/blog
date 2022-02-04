@@ -15,9 +15,6 @@ class CreatePelanggansTable extends Migration
     {
         Schema::create('pelanggans', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('namapelanggan',20);
-            $table->integer('no');
-            $table->string('alamat',50);
             $table->timestamps();
         });
     }

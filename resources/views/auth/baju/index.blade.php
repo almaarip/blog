@@ -8,10 +8,8 @@
    <table class="table">
         <thead>
             <tr>
-                <th>Kode</th>
                 <th>Nama</th>
-                <th>Berat_Kilogram</th>
-                <th>Jumlah</th>
+                <th>Harga</th>
                 <th colspan=2></th>
             </tr>
         </thead>
@@ -19,9 +17,7 @@
             @foreach($bajus as $baju)
                 <tr>
                     <td>{{$no++}}</td>
-                    <td>{{ $baju->kode }}</td>
                     <td>{{ $baju->nama }}</td>
-                    <td>{{ $baju->berat_kilogram}}</td>
                     <td>{{ $baju->harga }}</td>
                     <td>
                         <a href="{{route ('baju.edit',$baju->id)}}" class="btn btn-primary">Edit</a>

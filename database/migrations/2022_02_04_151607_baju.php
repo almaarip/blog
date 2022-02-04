@@ -15,9 +15,7 @@ class Baju extends Migration
     {
         Schema::create('bajus', function (Blueprint $table) {
             $table->bigIncrements('id')->nullable();
-            $table->string('kode',9)->unique();
             $table->string('nama',50);
-            $table->integer('berat_kilogram');
             $table->integer('harga');
             $table->timestamps();
         });
@@ -30,6 +28,6 @@ class Baju extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('baju');
+        Schema::dropIfExists('bajus');
     }
 }
