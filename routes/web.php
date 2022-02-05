@@ -20,3 +20,4 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('baju', 'BajuController');
 Route::resource('pelanggan', 'PelangganController');
+Route::resource('pembayaran', 'PembayaranController');

@@ -18,7 +18,7 @@ class Pembayaran extends Migration
             $table->integer('baju_id')->nullable();
             $table->integer('pelanggan_id')->nullable();
             $table->integer('qty');
-            $table->integer('Total');
+            $table->integer('total');
             $table->timestamps();
         });
     }

@@ -1,10 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\baju;
+use App\pelanggan;
+use App\pembayaran;
 use Illuminate\Http\Request;
 
-class PembayaranController extends Controller
+class pembayaranController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +15,8 @@ class PembayaranController extends Controller
      */
     public function index()
     {
-        //
+        $pembayarans = pembayaran::all(); 
+        return view('auth.pembayaran.index')->with('pembayarans',$pembayarans);
     }
 
     /**
@@ -23,7 +26,10 @@ class PembayaranController extends Controller
      */
     public function create()
     {
-        //
+        $pelanggans = Pelanggan::all();
+        $bajus = Baju::all();
+        return view('auth.pembayaran.create', compact('pelanggans','bajus'));
+
     }
 
     /**
@@ -35,15 +41,18 @@ class PembayaranController extends Controller
     public function store(Request $request)
     {
         //
+        pembayaran::create($request->all());
+        return redirect('pembayaran');
+
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\pembayaran  $pembayaran
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(pembayaran $pembayaran)
     {
         //
     }
@@ -51,34 +60,38 @@ class PembayaranController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\pembayaran  $pembayaran
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(pembayaran $pembayaran)
     {
         //
+        return view('authpembayaran.edit', compact('pembayaran'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\pembayaran  $pembayaran
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, pembayaran $pembayaran)
     {
-        //
+        $pembayaran->update($request->all());
+        return redirect('pembayaran');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\pembayaran  $pembayaran
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(pembayaran $pembayaran)
     {
         //
+        $pembayaran->delete();
+        return redirect('pembayaran');
     }
 }

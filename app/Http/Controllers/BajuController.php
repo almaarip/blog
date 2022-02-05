@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 
 use App\baju;
-use App\pelanggan;
 use Illuminate\Http\Request;
 
 class bajuController extends Controller
