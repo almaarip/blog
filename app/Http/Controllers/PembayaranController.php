@@ -15,6 +15,7 @@ class pembayaranController extends Controller
      */
     public function index()
     {
+        
         $pembayarans = pembayaran::all(); 
         return view('auth.pembayaran.index')->with('pembayarans',$pembayarans);
     }
@@ -40,9 +41,15 @@ class pembayaranController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        pembayaran::create($request->all());
-        return redirect('pembayaran');
+        $validatedData = $request->validate([
+            'baju_id' => 'required',
+            'pelanggan_id' => 'required',
+            'qty' => 'required',
+            'total' => 'required',
+        ]);
+        $pembayarans = Pembayaran::create($validatedData);
+
+        return redirect('/pembayaran')->with('success', 'Book is successfully saved');
 
     }
 

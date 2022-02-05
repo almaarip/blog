@@ -34,6 +34,15 @@
           
       </select>
     </div>
+    <div class"form-group">
+      <label for="baju">Harga</label>
+      <select name="baju_id" class="form-control">
+        @foreach ($bajus as $baju)
+          <option value="{{$baju->id}}"> {{$baju->harga}} </option>
+        @endforeach
+          
+      </select>
+    </div>
   <div class="form-group">
     <label for="staticEmail"class="col-sm-2 col-form-label">qty</label>
     <input type="number"  name="qty" placeholder="Masukan qty" >

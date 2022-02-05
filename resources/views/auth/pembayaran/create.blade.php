@@ -1,7 +1,7 @@
 @extends('layouts.apps')
 @section("content")
 <div>
-    <h3>Tambah Pelanggan</h3>
+    <h3>Pembayaran</h3>
 
     
 <form method="POST" action="{{route('pembayaran.store')}}">
@@ -24,16 +24,31 @@
           
       </select>
     </div>
+    
+    <div class"form-group">
+      <label for="baju"class="col-sm-2 col-form-label">Harga</label>
+      <input type="text"  name="harga" placeholder="Masukan harga" id="txt1" onkeyup="sum();" >
+    </div>
   <div class="form-group">
-    <label for="staticEmail"class="col-sm-2 col-form-label">qty</label>
-    <input type="number"  name="qty" placeholder="Masukan qty" >
+    <label for="staticEmail"class="col-sm-2 col-form-label">Kilo</label>
+    <input type="text"  name="qty" placeholder="Masukan qty" id="txt2" onkeyup="sum();" >
   </div>
   <div class="form-group">
     <label for="staticEmail"class="col-sm-2 col-form-label">total</label>
-    <input type="number"  name="total" placeholder="Masukan Total" >
+    <input type="text"  name="total" id="txt3" >
   </div>
   <button type="submit" class="btn btn-primary">Simpan</button>
 </form>
 
 </div>
+<script>
+  function sum(){
+    var txtFirst = document.getElementById('txt1'). value;
+    var txtSecond = document.getElementById('txt2'). value;
+    var result = parseInt(txtFirst) * parseInt(txtSecond);
+    if (!isNaN(result)){
+      document.getElementById('txt3').value = result;
+    }
+  }
+</script>
 @stop
